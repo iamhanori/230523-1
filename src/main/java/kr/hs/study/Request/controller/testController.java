@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 // Controller를 써야한단다 ... ^^
 @Controller
 public class testController {
+    // HttpServletRequest
     @GetMapping("/test1")
     public String test1(HttpServletRequest req) {
         String a = req.getParameter("data1");
@@ -37,6 +38,7 @@ public class testController {
         return "result";
     }
 
+    // WebRequest
     @GetMapping("/test3")
     public String test3(WebRequest req) {
         String a = req.getParameter("data1");
