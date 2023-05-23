@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1 th:text="'hello GetParameter'"></h1>
+
+    <a th:href="@{/test1?data1=100&data2=200&data3=300}">HttpServletRequest test1</a><br/>
+    <a th:href="@{/test2?data1=100&data2=200&data3=300&data3=400}">test2</a><br/>
+</body>
+</html>
