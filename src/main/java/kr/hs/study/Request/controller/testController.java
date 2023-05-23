@@ -2,6 +2,7 @@ package kr.hs.study.Request.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.context.request.WebRequest;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -23,6 +24,21 @@ public class testController {
     @GetMapping("/test2")
     public String test2(HttpServletRequest req) {
         // data1, data2
+        String a = req.getParameter("data1");
+        String b = req.getParameter("data2");
+        String[] c = req.getParameterValues("data3");
+
+        System.out.println("data1 : " + a);
+        System.out.println("data2 : " + b);
+        for(String str : c) {
+            System.out.println("data3 : " + str);
+        }
+
+        return "result";
+    }
+
+    @GetMapping("/test3")
+    public String test3(WebRequest req) {
         String a = req.getParameter("data1");
         String b = req.getParameter("data2");
         String[] c = req.getParameterValues("data3");
