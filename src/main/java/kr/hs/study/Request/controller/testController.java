@@ -1,10 +1,8 @@
 package kr.hs.study.Request.controller;
 
+import kr.hs.study.Request.dto.test6;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestAttribute;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
 
 import javax.servlet.http.HttpServletRequest;
@@ -80,6 +78,21 @@ public class testController {
         System.out.println("data1 : " + data1);
         System.out.println("data1 : " + data2);
         System.out.println("data1 : " + data3);
+
+        return "result";
+    }
+
+    // @ModelAttribute
+    @GetMapping("/test6")
+    public String test6(@ModelAttribute test6 t) {
+        // @ModelAttribute test6 t
+        // 부트가 test6객체 t를 만들고
+        // 사용자의 데이터를 set메서드를 이응해서 멤버변수에 넣는다. (Boot가 하는 거임)
+
+        // 출력 getDatan();
+        System.out.println("data1 : " + t.getData1());
+        System.out.println("data2 : " + t.getData2());
+        System.out.println("data3 : " + t.getData3());
 
         return "result";
     }
